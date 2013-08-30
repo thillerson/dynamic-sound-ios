@@ -34,7 +34,7 @@
 }
 
 - (void) bullet {
-    [PdBase sendFloat:1 toReceiver:@"bullet"];
+    [PdBase sendList:@[@440, @330] toReceiver:@"bullet"];
 }
 
 @end

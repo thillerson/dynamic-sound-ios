@@ -22,12 +22,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.pdAudioController = [PdAudioController new];
-    PdAudioStatus status = [self.pdAudioController configurePlaybackWithSampleRate:44100 numberChannels:2 inputEnabled:NO mixingEnabled:NO];
+    PdAudioStatus status = [self.pdAudioController configureAmbientWithSampleRate:44100 numberChannels:2 mixingEnabled:YES];
     if (status == PdAudioError) {
         // handle audio initialization error - probably by doing nothing.
     } else {
         self.pdInterface = [PdInterface new];
-        [self.pdInterface bullet];
     }
 
     return YES;
@@ -49,11 +48,11 @@
      */
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
+- (void)applicationDidEnterBackground:(UIApplication *)application {
     UIWindow* window = [application.windows objectAtIndex:0];
     RootViewController* rvc = (RootViewController*)[window rootViewController];
     [rvc doPause];
+    self.pdAudioController.active = NO;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -63,11 +62,8 @@
      */
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    /*
-     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-     */
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    self.pdAudioController.active = YES;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
