@@ -8,13 +8,28 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "PdAudioController.h"
+
+@interface AppDelegate ()
+
+@property(nonatomic, strong) PdAudioController *pdAudioController;
+
+@end
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.pdAudioController = [PdAudioController new];
+    PdAudioStatus status = [self.pdAudioController configurePlaybackWithSampleRate:44100 numberChannels:2 inputEnabled:NO mixingEnabled:NO];
+    if (status == PdAudioError) {
+        // handle audio initialization error - probably by doing nothing.
+    } else {
+        self.pdInterface = [PdInterface new];
+        [self.pdInterface bullet];
+    }
+
     return YES;
 }
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{

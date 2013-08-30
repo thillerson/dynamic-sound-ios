@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "RootViewController.h"
+#import "PdInterface.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-
-
 @property (strong, nonatomic) IBOutlet UIWindow *window;
+@property(nonatomic, strong) PdInterface *pdInterface;
 
 @end

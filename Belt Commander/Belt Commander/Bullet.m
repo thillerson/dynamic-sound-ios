@@ -9,6 +9,7 @@
 #import "Bullet.h"
 #import "LinearMotion.h"
 #import "ExpireAfterTime.h"
+#import "AppDelegate.h"
 
 @implementation Bullet
 @synthesize damage;
@@ -22,6 +23,7 @@
 }
 
 +(id)bulletAt:(CGPoint)aCenter WithDirection:(float)aDirection From:(Actor*)actor{
+    [((AppDelegate*)[UIApplication sharedApplication].delegate).pdInterface bullet];
     
     VectorRepresentation* rep = [VectorRepresentation vectorRepresentation];
     
@@ -41,6 +43,7 @@
     return bullet;
 }
 +(id)bulletAt:(CGPoint)aCenter TowardPoint:(CGPoint)aPoint From:(Actor*)actor{
+    [((AppDelegate*)[UIApplication sharedApplication].delegate).pdInterface bullet];
     
     VectorRepresentation* rep = [VectorRepresentation vectorRepresentation];
     

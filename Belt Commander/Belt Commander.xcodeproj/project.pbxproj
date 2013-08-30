@@ -659,7 +659,37 @@
 		8EF729DF1402DF7F00B96625 /* Window_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EF729DE1402DF7F00B96625 /* Window_iPad.xib */; };
 		8EF729E11402DFCF00B96625 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF729E01402DFCF00B96625 /* QuartzCore.framework */; };
 		8EF729E31402DFE300B96625 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF729E21402DFE300B96625 /* CoreGraphics.framework */; };
+		EA243AAE17D04D8100D07692 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA243AA917D04C9200D07692 /* libpd-ios.a */; };
+		EA243AB017D04D8F00D07692 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA243AAF17D04D8F00D07692 /* AVFoundation.framework */; };
+		EA243AB217D04D9600D07692 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA243AB117D04D9600D07692 /* AudioToolbox.framework */; };
+		EA243AB717D04EEE00D07692 /* PdInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = EA243AB617D04EEE00D07692 /* PdInterface.m */; };
+		EA243ABB17D053CE00D07692 /* adsr.pd in Resources */ = {isa = PBXBuildFile; fileRef = EA243AB917D050FF00D07692 /* adsr.pd */; };
+		EA243ABC17D053CE00D07692 /* BeltCommanderPatch.pd in Resources */ = {isa = PBXBuildFile; fileRef = EA243ABA17D050FF00D07692 /* BeltCommanderPatch.pd */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA243AA817D04C9200D07692 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA243AA317D04C9100D07692 /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = "libpd-ios";
+		};
+		EA243AAA17D04C9200D07692 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA243AA317D04C9100D07692 /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 119013AB1486450C00086F19;
+			remoteInfo = "libpd-osx";
+		};
+		EA243AAC17D04D7000D07692 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA243AA317D04C9100D07692 /* libpd.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = "libpd-ios";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8E02D0351402E24C00AE4DAE /* Window_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Window_iPhone.xib; sourceTree = "<group>"; };
@@ -1354,6 +1384,13 @@
 		8EF729DE1402DF7F00B96625 /* Window_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Window_iPad.xib; sourceTree = "<group>"; };
 		8EF729E01402DFCF00B96625 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8EF729E21402DFE300B96625 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EA243AA317D04C9100D07692 /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = ../submodules/libpd/libpd.xcodeproj; sourceTree = "<group>"; };
+		EA243AAF17D04D8F00D07692 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EA243AB117D04D9600D07692 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EA243AB517D04EEE00D07692 /* PdInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdInterface.h; sourceTree = "<group>"; };
+		EA243AB617D04EEE00D07692 /* PdInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdInterface.m; sourceTree = "<group>"; };
+		EA243AB917D050FF00D07692 /* adsr.pd */ = {isa = PBXFileReference; lastKnownFileType = text; name = adsr.pd; path = Assets/Patches/adsr.pd; sourceTree = SOURCE_ROOT; };
+		EA243ABA17D050FF00D07692 /* BeltCommanderPatch.pd */ = {isa = PBXFileReference; lastKnownFileType = text; name = BeltCommanderPatch.pd; path = Assets/Patches/BeltCommanderPatch.pd; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1361,6 +1398,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA243AB217D04D9600D07692 /* AudioToolbox.framework in Frameworks */,
+				EA243AB017D04D8F00D07692 /* AVFoundation.framework in Frameworks */,
+				EA243AAE17D04D8100D07692 /* libpd-ios.a in Frameworks */,
 				8E94149A140D17C300A84895 /* StoreKit.framework in Frameworks */,
 				8E941494140BE84A00A84895 /* Twitter.framework in Frameworks */,
 				8EBAA9621406B46A006FE664 /* GameKit.framework in Frameworks */,
@@ -1454,9 +1494,6 @@
 		8EF724C01402D6A700B96625 = {
 			isa = PBXGroup;
 			children = (
-				8E941499140D17C300A84895 /* StoreKit.framework */,
-				8E941493140BE84A00A84895 /* Twitter.framework */,
-				8EBAA9611406B46A006FE664 /* GameKit.framework */,
 				8E02D0351402E24C00AE4DAE /* Window_iPhone.xib */,
 				8EF729DE1402DF7F00B96625 /* Window_iPad.xib */,
 				8EF724D31402D6A700B96625 /* Belt Commander */,
@@ -1476,6 +1513,12 @@
 		8EF724CE1402D6A700B96625 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA243AB117D04D9600D07692 /* AudioToolbox.framework */,
+				EA243AAF17D04D8F00D07692 /* AVFoundation.framework */,
+				EA243AA317D04C9100D07692 /* libpd.xcodeproj */,
+				8E941499140D17C300A84895 /* StoreKit.framework */,
+				8E941493140BE84A00A84895 /* Twitter.framework */,
+				8EBAA9611406B46A006FE664 /* GameKit.framework */,
 				8EF729E21402DFE300B96625 /* CoreGraphics.framework */,
 				8EF729E01402DFCF00B96625 /* QuartzCore.framework */,
 				8EF724CF1402D6A700B96625 /* UIKit.framework */,
@@ -1491,6 +1534,7 @@
 				8EF724D41402D6A700B96625 /* Supporting Files */,
 				8EF724E91402D6DE00B96625 /* Game */,
 				8EF724EB1402D6EE00B96625 /* Resources */,
+				EA243AB417D04ECA00D07692 /* Sound */,
 				8EF724EA1402D6E500B96625 /* Actors */,
 				8EF724DC1402D6A700B96625 /* AppDelegate.h */,
 				8EF724DD1402D6A700B96625 /* AppDelegate.m */,
@@ -1581,6 +1625,7 @@
 				8EF724F51402D76200B96625 /* Asteroids */,
 				8EF725531402D76200B96625 /* Saucers */,
 				8EF725B11402D76200B96625 /* Powerups */,
+				EA243AB817D050D100D07692 /* Patches */,
 				8EF7272C1402D76200B96625 /* spark_yellow.png */,
 				8EF7272D1402D76200B96625 /* spark_magenta.png */,
 				8EF7272E1402D76200B96625 /* spark_cyan.png */,
@@ -2197,6 +2242,33 @@
 			path = Resources/Powerups;
 			sourceTree = "<group>";
 		};
+		EA243AA417D04C9100D07692 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA243AA917D04C9200D07692 /* libpd-ios.a */,
+				EA243AAB17D04C9200D07692 /* libpd-osx.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA243AB417D04ECA00D07692 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				EA243AB517D04EEE00D07692 /* PdInterface.h */,
+				EA243AB617D04EEE00D07692 /* PdInterface.m */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
+		EA243AB817D050D100D07692 /* Patches */ = {
+			isa = PBXGroup;
+			children = (
+				EA243AB917D050FF00D07692 /* adsr.pd */,
+				EA243ABA17D050FF00D07692 /* BeltCommanderPatch.pd */,
+			);
+			name = Patches;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2211,6 +2283,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EA243AAD17D04D7000D07692 /* PBXTargetDependency */,
 			);
 			name = "Belt Commander";
 			productName = "Belt Commander";
@@ -2235,12 +2308,35 @@
 			mainGroup = 8EF724C01402D6A700B96625;
 			productRefGroup = 8EF724CC1402D6A700B96625 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EA243AA417D04C9100D07692 /* Products */;
+					ProjectRef = EA243AA317D04C9100D07692 /* libpd.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8EF724CA1402D6A700B96625 /* Belt Commander */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EA243AA917D04C9200D07692 /* libpd-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-ios.a";
+			remoteRef = EA243AA817D04C9200D07692 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA243AAB17D04C9200D07692 /* libpd-osx.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-osx.a";
+			remoteRef = EA243AAA17D04C9200D07692 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8EF724C91402D6A700B96625 /* Resources */ = {
@@ -2853,6 +2949,8 @@
 				8E6A403E1412EC4900BF8EE8 /* viper_up@2x.png in Resources */,
 				8E6A403F1412EC4900BF8EE8 /* viper_down.png in Resources */,
 				8E6A40401412EC4900BF8EE8 /* viper_up.png in Resources */,
+				EA243ABB17D053CE00D07692 /* adsr.pd in Resources */,
+				EA243ABC17D053CE00D07692 /* BeltCommanderPatch.pd in Resources */,
 				8E6A40411412EC4900BF8EE8 /* viper_stopped@2x.png in Resources */,
 				8E6A40421412EC4900BF8EE8 /* viper_stopped.png in Resources */,
 				8E7C828D1413D08C00D317EA /* shield.png in Resources */,
@@ -2871,6 +2969,7 @@
 				8EF7298A1402D77600B96625 /* Particle.m in Sources */,
 				8EF7298B1402D77600B96625 /* GameController.m in Sources */,
 				8EF7298C1402D77600B96625 /* Actor.m in Sources */,
+				EA243AB717D04EEE00D07692 /* PdInterface.m in Sources */,
 				8EF7298D1402D77600B96625 /* ImageRepresentation.m in Sources */,
 				8EF7298E1402D77600B96625 /* VectorRepresentation.m in Sources */,
 				8EF7298F1402D77600B96625 /* VectorActorView.m in Sources */,
@@ -2906,6 +3005,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA243AAD17D04D7000D07692 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libpd-ios";
+			targetProxy = EA243AAC17D04D7000D07692 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8EF724D61402D6A700B96625 /* InfoPlist.strings */ = {
@@ -2974,6 +3081,7 @@
 				INFOPLIST_FILE = "Belt Commander/Belt Commander-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "../submodules/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2986,6 +3094,7 @@
 				INFOPLIST_FILE = "Belt Commander/Belt Commander-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "../submodules/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
