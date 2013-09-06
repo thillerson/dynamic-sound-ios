@@ -1,0 +1,33 @@
+#N canvas 445 97 807 588 10;
+#X obj 421 255 samphold~;
+#X obj 22 19 loadbang;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array square 1027 float 2;
+#X coords 0 1 1027 -1 200 140 1 0 0;
+#X restore 22 137 graph;
+#X obj 421 301 hip~ 400;
+#X obj 421 205 tabosc4~ square;
+#X msg 22 47 \; square sinesum 1024 1 0 0.333333 0 0.2 0 0.142857 0
+0.111111 0 0.090909 0 0.076923 0 0.066667 0 0.058824 0 0.052632 0 0.047619
+0 \; square normalize 1 \;;
+#X obj 421 335 dac~;
+#X obj 425 37 r bullet;
+#X obj 446 159 line~;
+#X obj 426 63 unpack f f;
+#X obj 442 95 swap;
+#X msg 404 126 0 \$1;
+#X msg 571 44 \; bullet 200 300 \;;
+#X obj 487 236 phasor~ 8000;
+#X connect 0 0 3 0;
+#X connect 1 0 5 0;
+#X connect 3 0 6 0;
+#X connect 3 0 6 1;
+#X connect 4 0 0 0;
+#X connect 7 0 9 0;
+#X connect 8 0 4 0;
+#X connect 9 0 10 0;
+#X connect 9 1 10 1;
+#X connect 10 0 11 0;
+#X connect 10 1 8 0;
+#X connect 11 0 8 0;
+#X connect 13 0 0 1;
