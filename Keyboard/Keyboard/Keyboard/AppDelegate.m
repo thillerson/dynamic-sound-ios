@@ -23,7 +23,7 @@
                                                                    numberChannels:2
                                                                     mixingEnabled:YES];
     if (status == PdAudioError) {
-        // handle audio initialization error - probably by doing nothing.
+        // handle audio initialization error 
     }
     return YES;
 }
