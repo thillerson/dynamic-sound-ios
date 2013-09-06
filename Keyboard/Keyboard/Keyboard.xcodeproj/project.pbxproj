@@ -531,6 +531,7 @@
 				EA5B560717D9769C00A1252B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA5B560817D9769C00A1252B /* Build configuration list for PBXNativeTarget "KeyboardTests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +540,7 @@
 				EA5B560A17D9769C00A1252B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
