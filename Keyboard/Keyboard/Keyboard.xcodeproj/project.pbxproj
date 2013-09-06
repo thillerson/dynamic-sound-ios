@@ -21,6 +21,10 @@
 		EA5B55F817D9769C00A1252B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5B55DA17D9769C00A1252B /* UIKit.framework */; };
 		EA5B560017D9769C00A1252B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA5B55FE17D9769C00A1252B /* InfoPlist.strings */; };
 		EA5B560217D9769C00A1252B /* KeyboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5B560117D9769C00A1252B /* KeyboardTests.m */; };
+		EA5B561617D983E300A1252B /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5B561117D983C900A1252B /* libpd-ios.a */; };
+		EA5B561817D983ED00A1252B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5B561717D983ED00A1252B /* AudioToolbox.framework */; };
+		EA5B561C17D990E700A1252B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5B561B17D990E700A1252B /* AVFoundation.framework */; };
+		EA5B561F17D9929B00A1252B /* Keyboard.pd in Resources */ = {isa = PBXBuildFile; fileRef = EA5B561E17D9929B00A1252B /* Keyboard.pd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +34,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = EA5B55D217D9769C00A1252B;
 			remoteInfo = Keyboard;
+		};
+		EA5B561017D983C900A1252B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA5B560B17D983C800A1252B /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = "libpd-ios";
+		};
+		EA5B561217D983C900A1252B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA5B560B17D983C800A1252B /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 119013AB1486450C00086F19;
+			remoteInfo = "libpd-osx";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -53,6 +71,10 @@
 		EA5B55FD17D9769C00A1252B /* KeyboardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KeyboardTests-Info.plist"; sourceTree = "<group>"; };
 		EA5B55FF17D9769C00A1252B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EA5B560117D9769C00A1252B /* KeyboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardTests.m; sourceTree = "<group>"; };
+		EA5B560B17D983C800A1252B /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = ../../submodules/libpd/libpd.xcodeproj; sourceTree = "<group>"; };
+		EA5B561717D983ED00A1252B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EA5B561B17D990E700A1252B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EA5B561E17D9929B00A1252B /* Keyboard.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Keyboard.pd; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +82,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5B561C17D990E700A1252B /* AVFoundation.framework in Frameworks */,
+				EA5B561817D983ED00A1252B /* AudioToolbox.framework in Frameworks */,
+				EA5B561617D983E300A1252B /* libpd-ios.a in Frameworks */,
 				EA5B55D917D9769C00A1252B /* CoreGraphics.framework in Frameworks */,
 				EA5B55DB17D9769C00A1252B /* UIKit.framework in Frameworks */,
 				EA5B55D717D9769C00A1252B /* Foundation.framework in Frameworks */,
@@ -101,6 +126,9 @@
 		EA5B55D517D9769C00A1252B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA5B561B17D990E700A1252B /* AVFoundation.framework */,
+				EA5B561717D983ED00A1252B /* AudioToolbox.framework */,
+				EA5B560B17D983C800A1252B /* libpd.xcodeproj */,
 				EA5B55D617D9769C00A1252B /* Foundation.framework */,
 				EA5B55D817D9769C00A1252B /* CoreGraphics.framework */,
 				EA5B55DA17D9769C00A1252B /* UIKit.framework */,
@@ -118,6 +146,7 @@
 				EA5B55EB17D9769C00A1252B /* ViewController.h */,
 				EA5B55EC17D9769C00A1252B /* ViewController.m */,
 				EA5B55EE17D9769C00A1252B /* Images.xcassets */,
+				EA5B561D17D9929B00A1252B /* patches */,
 				EA5B55DD17D9769C00A1252B /* Supporting Files */,
 			);
 			path = Keyboard;
@@ -151,6 +180,23 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		EA5B560C17D983C800A1252B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA5B561117D983C900A1252B /* libpd-ios.a */,
+				EA5B561317D983C900A1252B /* libpd-osx.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA5B561D17D9929B00A1252B /* patches */ = {
+			isa = PBXGroup;
+			children = (
+				EA5B561E17D9929B00A1252B /* Keyboard.pd */,
+			);
+			path = patches;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -218,6 +264,12 @@
 			mainGroup = EA5B55CA17D9769C00A1252B;
 			productRefGroup = EA5B55D417D9769C00A1252B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EA5B560C17D983C800A1252B /* Products */;
+					ProjectRef = EA5B560B17D983C800A1252B /* libpd.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				EA5B55D217D9769C00A1252B /* Keyboard */,
@@ -226,6 +278,23 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		EA5B561117D983C900A1252B /* libpd-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-ios.a";
+			remoteRef = EA5B561017D983C900A1252B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA5B561317D983C900A1252B /* libpd-osx.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-osx.a";
+			remoteRef = EA5B561217D983C900A1252B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		EA5B55D117D9769C00A1252B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -233,6 +302,7 @@
 			files = (
 				EA5B55EF17D9769C00A1252B /* Images.xcassets in Resources */,
 				EA5B55E117D9769C00A1252B /* InfoPlist.strings in Resources */,
+				EA5B561F17D9929B00A1252B /* Keyboard.pd in Resources */,
 				EA5B55EA17D9769C00A1252B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +452,7 @@
 				GCC_PREFIX_HEADER = "Keyboard/Keyboard-Prefix.pch";
 				INFOPLIST_FILE = "Keyboard/Keyboard-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "../../submodules/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -396,6 +467,7 @@
 				GCC_PREFIX_HEADER = "Keyboard/Keyboard-Prefix.pch";
 				INFOPLIST_FILE = "Keyboard/Keyboard-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "../../submodules/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

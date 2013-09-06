@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "PdBase.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    void *patch;
+}
 
 @end
 
@@ -16,18 +19,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES
+                                            withAnimation:UIStatusBarAnimationFade];
+    patch = [PdBase openFile:@"Keyboard.pd"
+                        path:[[NSBundle mainBundle] resourcePath]];
 }
 
 - (IBAction)keyDown:(id)sender {
-    
+    UIView *sendingView = (UIView *)sender;
+    int tag = [sendingView tag];
+    [PdBase sendFloat:tag toReceiver:@"midinote"];
+    [PdBase sendFloat:1.  toReceiver:@"gate"];
 }
 
 - (IBAction)keyUp:(id)sender {
-    
+    [PdBase sendFloat:0.  toReceiver:@"gate"];
 }
 
 @end
