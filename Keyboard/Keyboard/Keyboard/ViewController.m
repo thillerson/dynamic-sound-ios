@@ -19,10 +19,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[UIApplication sharedApplication] setStatusBarHidden:YES
-                                            withAnimation:UIStatusBarAnimationFade];
+    
+    // Thanks! https://gist.github.com/marlonSci5/6006700
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        // iOS 7
+        [self prefersStatusBarHidden];
+        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+    } else {
+        // iOS 6
+        [[UIApplication sharedApplication] setStatusBarHidden:YES
+                                                withAnimation:UIStatusBarAnimationSlide];
+    }
     patch = [PdBase openFile:@"Keyboard.pd"
                         path:[[NSBundle mainBundle] resourcePath]];
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 - (IBAction)keyDown:(id)sender {
