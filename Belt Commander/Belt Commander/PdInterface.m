@@ -34,7 +34,15 @@
 }
 
 - (void) bullet {
-    [PdBase sendList:@[@440, @330] toReceiver:@"bullet"];
+    [PdBase sendList:@[@80, @400] toReceiver:@"bullet"];
+}
+
+- (void) asteroidHit {
+    [PdBase sendList:@[@100, @100] toReceiver:@"asteroid"];
+}
+
+- (void) shipHit {
+    [PdBase sendList:@[@1000, @50] toReceiver:@"ship"];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "Viper.h"
 #import "Bullet.h"
+#import "AppDelegate.h"
 
 @implementation Viper
 @synthesize health, maxHealth, lastShot, stepsPerShot, shootTop, damage;
@@ -81,6 +82,7 @@
     }
 }
 -(void)decrementHealth:(float)amount{
+    [((AppDelegate *)[UIApplication sharedApplication].delegate).pdInterface shipHit];
     health -= amount;
 }
 -(void)incrementDamage:(GameController*)gameController{

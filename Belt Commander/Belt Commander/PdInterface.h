@@ -11,5 +11,7 @@
 @interface PdInterface : NSObject
 
 - (void) bullet;
+- (void) asteroidHit;
+- (void) shipHit;
 
 @end

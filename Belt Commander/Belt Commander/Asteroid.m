@@ -10,6 +10,7 @@
 #import "LinearMotion.h"
 #import "ExpireAfterTime.h"
 #import "Particle.h"
+#import "AppDelegate.h"
 
 @implementation Asteroid
 @synthesize level;
@@ -55,6 +56,7 @@
 }
 -(void)doHit:(GameController*)controller{
     if (level > 1){
+        [((AppDelegate *)[UIApplication sharedApplication].delegate).pdInterface asteroidHit];
         int count = 1;
         float percent = arc4random()%1000/1000.0f;
         if (percent > 0.9){
