@@ -49,4 +49,5 @@
     int value = (on) ? 1 : 0;
     [PdBase sendFloat:value toReceiver:@"thruster"];
 }
+
 @end
