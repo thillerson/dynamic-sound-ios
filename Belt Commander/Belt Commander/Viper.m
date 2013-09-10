@@ -102,6 +102,8 @@
     lastStepDamageWasModified = [gameController stepNumber];
 }
 -(void)setMoveToPoint:(CGPoint)aPoint within:(GameController*)gameController{
+    [((AppDelegate *)[UIApplication sharedApplication].delegate).pdInterface thruster:YES];
+
     if (motion){
         [[self behaviors] removeObject: motion];
     }
@@ -112,7 +114,6 @@
     } else if (point.y > self.center.y){
         [self setState:VPR_STATE_DOWN];
     }
-
     
     motion = [LinearMotion linearMotionFromPoint:[self center] toPoint:point AtSpeed:1.2f];
     [motion setDelegate:self];
@@ -129,6 +130,7 @@
     
 }
 -(void)linearMotion:(LinearMotion*)linearMotion stoppedAtPoint:(CGPoint)aPoint{
+    [((AppDelegate *)[UIApplication sharedApplication].delegate).pdInterface thruster:NO];
     [self setState: VPR_STATE_STOPPED];
 }
 @end

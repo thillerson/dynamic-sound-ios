@@ -13,5 +13,6 @@
 - (void) bullet;
 - (void) asteroidHit;
 - (void) shipHit;
+- (void) thruster:(BOOL)on;
 
 @end
